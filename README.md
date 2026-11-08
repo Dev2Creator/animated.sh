@@ -35,7 +35,43 @@ tree types that are actually distinguishable: pine, oak, birch, willow,
 blossom, autumn and deadwood. Weather, season and time of day are independent
 axes, so `--weather snow --season winter --time night` is a real snowy night.
 
+```
+
+## Install
+
+Needs bash and awk. That is the whole list.
+
 ```bash
+git clone https://github.com/Dev2Creator/animated.sh
+cd animated.sh
+chmod +x animated.sh
+./animated.sh
+```
+
+Or put it on your PATH:
+
+```bash
+make install          # symlinks into ~/.local/bin
+make uninstall
+```
+
+### Termux (Android)
+
+```bash
+pkg update
+pkg install git bash coreutils gawk
+git clone https://github.com/Dev2Creator/animated.sh
+cd animated.sh
+chmod +x animated.sh
+./animated.sh
+```
+
+Notes for phones: the on-screen keyboard often has no Escape key, so use `q` to
+leave a scene and `h` for help. If the box-drawing glyphs look wrong in your font,
+start with `--ascii`. `mawk` works too if you prefer it over `gawk`.
+
+Created with Bash 5 and GNU awk, verified against mawk as well.
+bash
 ./animated.sh forest --weather rain
 ./animated.sh forest --weather storm --time night
 ./animated.sh forest --season autumn --time evening --theme autumn
